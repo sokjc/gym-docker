@@ -35,4 +35,6 @@ RUN pip3 install \
     gym \
     gym[atari] \
     gym-super-mario-bros \
-    pylivestream
+    pylivestream \
+    x264 \
+    ffmpeg
