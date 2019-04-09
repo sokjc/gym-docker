@@ -3,17 +3,19 @@
 
 FROM docker.io/tensorflow/tensorflow:1.5.0-gpu-py3
 # Alternate pinned source:
-#FROM docker.io/paperspace/tensorflow:1.5.0-gpu
+# FROM docker.io/paperspace/tensorflow:1.5.0-gpu
 
-RUN mv /usr/local/bin/pip /usr/local/bin/pip_2
+# RUN mv /usr/local/bin/pip /usr/local/bin/pip_2
 
 RUN apt-get -y update && apt-get install -y python3-pip && pip3 install --upgrade pip
 
-RUN rm /usr/local/bin/pip && mv /usr/local/bin/pip_2 /usr/local/bin/pip
+RUN apt-get install -y ffmpeg
+
+#RUN rm /usr/local/bin/pip && mv /usr/local/bin/pip_2 /usr/local/bin/pip
 
 RUN pip3 install \
     pipenv \
-    paperspace
+    paperspace \
     jupyter \
     scikit-learn \
     scipy \
@@ -35,6 +37,4 @@ RUN pip3 install \
     gym \
     gym[atari] \
     gym-super-mario-bros \
-    pylivestream \
-    x264 \
-    ffmpeg
+    pylivestream
