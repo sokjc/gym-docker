@@ -38,7 +38,6 @@ RUN pip3 install \
     gym[atari] \
     gym-super-mario-bros \
     pylivestream \
-    PIL \
     opencv-python \
     keras
 
