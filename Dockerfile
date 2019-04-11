@@ -45,5 +45,3 @@ RUN pip3 install \
   RUN pip3 install gym[atari]
 
   RUN git clone https://github.com/sokjc/WinnersCircle
-
-  RUN mv /WinnersCircle /notebooks/WinnersCircle
