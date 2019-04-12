@@ -9,7 +9,8 @@ FROM docker.io/tensorflow/tensorflow:1.5.0-gpu-py3
 
 RUN apt-get -y update && apt-get install -y python3-pip && pip3 install --upgrade pip
 
-RUN apt-get install -y ffmpeg && -y x264
+RUN apt-get install -y ffmpeg && -&& apt install -y libsm6 libxext6
+
 RUN apt-get install -y git
 
 #RUN rm /usr/local/bin/pip && mv /usr/local/bin/pip_2 /usr/local/bin/pip
@@ -43,5 +44,6 @@ RUN pip3 install \
     keras
 
   RUN pip3 install gym[atari]
+  RUN pip3 install opencv-python
 
   RUN git clone https://github.com/sokjc/WinnersCircle
