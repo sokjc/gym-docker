@@ -9,7 +9,7 @@ FROM docker.io/tensorflow/tensorflow:1.5.0-gpu-py3
 
 RUN apt-get -y update && apt-get install -y python3-pip && pip3 install --upgrade pip
 
-RUN apt-get install -y ffmpeg && -&& apt install -y libsm6 libxext6
+RUN apt-get install -y ffmpeg && -&& apt-get install -y libsm6 && apt-get install -y libxext6
 
 RUN apt-get install -y git
 
